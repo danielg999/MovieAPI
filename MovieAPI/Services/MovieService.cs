@@ -12,7 +12,7 @@ namespace MovieAPI.Services
         IEnumerable<MovieDto> GetAll();
         MovieDto GetById(int id);
         bool Delete(int id);
-        bool Update(int id, UpdateRestaurantDto dto);
+        bool Update(int id, UpdateMovieDto dto);
     }
     public class MovieService : IMovieService
     {
@@ -71,7 +71,7 @@ namespace MovieAPI.Services
             return true;
         }
 
-        public bool Update(int id, UpdateRestaurantDto dto)
+        public bool Update(int id, UpdateMovieDto dto)
         {
             var movie = _dbContext
                 .Movies

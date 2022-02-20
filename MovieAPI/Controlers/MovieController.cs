@@ -63,13 +63,12 @@ namespace MovieAPI.Controlers
             return NotFound();
         }
         [HttpPut("{id}")]
-        public ActionResult Update([FromBody] UpdateRestaurantDto dto, [FromRoute] int id)
+        public ActionResult Update([FromBody] UpdateMovieDto dto, [FromRoute] int id)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
-
             var isUpdated = _movieService.Update(id, dto);
 
             if (!isUpdated)
